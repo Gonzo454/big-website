@@ -1,0 +1,54 @@
+---
+const opportunities = [
+  {
+    title: 'Stabilized Income Assets',
+    desc: 'Commercial and residential assets with strong in-place cash flow.',
+  },
+  {
+    title: 'Value-Add Opportunities',
+    desc: 'Repositioning plays where our operational expertise drives returns.',
+  },
+  {
+    title: 'Development Projects',
+    desc: 'Ground-up and redevelopment projects with significant upside potential.',
+  },
+  {
+    title: 'Secure Investor Portal',
+    desc: 'Login anytime to review holdings, reports, and new opportunities.',
+  },
+];
+---
+
+<section id="investors" class="bg-black py-20">
+  <div class="max-w-[1280px] mx-auto px-10">
+    <div class="col-2 grid grid-cols-2 gap-15 items-center">
+
+      <div>
+        <div class="label">Capital Partners</div>
+        <h2 class="text-[clamp(26px,3vw,40px)] font-bold text-white tracking-tight mb-4">Investment Opportunities</h2>
+        <p class="text-sm text-[#777] leading-[1.85] mb-9">Blackdeer offers accredited investors access to curated Midwest real estate — stabilized income assets, value-add plays, and development projects. We invest alongside our partners.</p>
+
+        <div class="flex flex-col gap-5">
+          {opportunities.map(item => (
+            <div class="flex gap-4 items-start">
+              <div class="w-1.5 h-1.5 bg-accent rounded-full mt-1.5 shrink-0"></div>
+              <div>
+                <div class="text-sm font-semibold text-[#ddd]">{item.title}</div>
+                <div class="text-xs text-[#666] mt-0.5">{item.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="border border-[#222] p-11 text-center">
+        <div class="w-14 h-14 border border-[#333] flex items-center justify-center mx-auto mb-6 text-2xl">🔐</div>
+        <h3 class="text-[22px] font-bold text-white mb-2.5">Investor Portal</h3>
+        <p class="text-[13px] text-[#777] leading-[1.75] mb-7">Access your investment account, review current opportunities, and track portfolio performance.</p>
+        <a href="#" class="btn-accent block text-center mb-3">Log In to Portal →</a>
+        <a href="mailto:info@blackdeerig.com" class="btn-outline block text-center">Contact Investment Team</a>
+      </div>
+
+    </div>
+  </div>
+</section>
