@@ -29,7 +29,7 @@ const services = [
         <div class="col-2-sm grid grid-cols-2 gap-2">
           {services.map(service => (
             <label class="card flex items-center gap-2.5 p-3 cursor-pointer text-xs text-black">
-              <input type="checkbox" name="services" value={service} class="plan-check" /> {service}
+              <input type="checkbox" name="services" value={service} form="proposal-form" class="plan-check" /> {service}
             </label>
           ))}
         </div>
