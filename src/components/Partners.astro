@@ -1,18 +1,28 @@
 ---
 const partners = [
   {
-    initial: 'Y',
+    logo: '/images/logos/y-realty-logo-white.png',
     name: 'Y Realty',
+    url: 'https://yrealtyinc.com/',
     role: 'Residential Sales Partner',
     desc: 'Home buying, selling, and residential advisory. Y Realty operates as a residential sales and referral partner — separate from Blackdeer\'s property management division.',
     tags: ['Home Buying', 'Home Selling', 'Residential Advisory'],
   },
   {
-    initial: 'PV',
+    logo: '/images/logos/park-vista-logo.png',
     name: 'Park Vista Senior Housing',
+    url: 'https://parkvistaliving.org/',
     role: 'Senior Housing Operations Partner',
     desc: 'Focused exclusively on senior living operations, assisted living, memory care, and senior housing property management — a specialized partner associated with Blackdeer.',
     tags: ['Senior Living', 'Assisted Living', 'Memory Care'],
+  },
+  {
+    logo: '/images/logos/metify-logo-white.png',
+    name: 'Metify',
+    url: 'https://www.metify.ai',
+    role: 'Technology Partner',
+    desc: 'Providing cutting-edge technology solutions and digital infrastructure to streamline operations, enhance data management, and drive innovation across the Blackdeer portfolio.',
+    tags: ['Technology', 'Data Management', 'Digital Infrastructure'],
   },
 ];
 ---
@@ -25,10 +35,12 @@ const partners = [
       <p class="text-sm text-mid-gray mt-2.5 max-w-[480px] leading-[1.7]">Specialized partners expand our service coverage while keeping each relationship clear and transparent.</p>
     </div>
 
-    <div class="col-2 grid grid-cols-2 gap-4 max-w-[900px]">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-[1280px]">
       {partners.map(partner => (
-        <div class="card p-8 flex gap-5 items-start">
-          <div class="w-12 h-12 bg-black shrink-0 flex items-center justify-center text-lg font-bold text-white tracking-wide">{partner.initial}</div>
+        <a href={partner.url} target="_blank" rel="noopener noreferrer" class="card p-8 flex gap-5 items-start no-underline hover:border-accent transition-colors">
+          <div class="w-12 h-12 bg-black shrink-0 flex items-center justify-center rounded">
+            <img src={partner.logo} alt={partner.name} class="w-10 h-10 object-contain" />
+          </div>
           <div>
             <h3 class="text-base font-semibold text-black">{partner.name}</h3>
             <div class="text-[10px] font-semibold tracking-[.14em] uppercase text-accent my-1 mb-2.5">{partner.role}</div>
@@ -37,7 +49,7 @@ const partners = [
               {partner.tags.map(tag => <span class="tag">{tag}</span>)}
             </div>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   </div>
