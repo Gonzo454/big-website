@@ -27,6 +27,15 @@ const team = [
     email: 'info@blackdeerig.com',
     focus: 'Property Operations · Maintenance · Logistics',
   },
+  {
+    image: '/images/team/carrie-stanke.png',
+    alt: 'Carrie Stanke',
+    name: 'Carrie Stanke',
+    role: 'Accounting Manager',
+    phone: '(608) 555-0003',
+    email: 'info@blackdeerig.com',
+    focus: 'Accounting · Finance · Reporting',
+  },
 ];
 ---
 
@@ -38,7 +47,7 @@ const team = [
       <p class="text-sm text-mid-gray mt-2.5 max-w-[480px] leading-[1.7]">Experienced professionals across management, development, brokerage, and operations.</p>
     </div>
 
-    <div class="col-3 grid grid-cols-3 gap-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
       {team.map(member => (
         <div class="card overflow-hidden">
           <div class="h-[220px] bg-[#f5f5f5] overflow-hidden flex items-center justify-center relative">
