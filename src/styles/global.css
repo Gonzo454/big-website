@@ -76,6 +76,23 @@ body {
 }
 .btn-outline:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
+.btn-outline-hero {
+  display: inline-block;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-family: var(--font-family-inter);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 11px 24px;
+  border: 1px solid rgba(255,255,255,0.4);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.btn-outline-hero:hover { background: #fff; color: var(--color-black); border-color: #fff; }
+
 .btn-outline-dark {
   display: inline-block;
   background: transparent;
