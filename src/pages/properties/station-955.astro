@@ -1,0 +1,96 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+---
+
+<Layout title="Station 955 – Luxury Apartments – Blackdeer Investment Group">
+  <Nav />
+
+  <main class="pt-[68px]">
+    <!-- Hero Image -->
+    <section class="relative h-[360px] overflow-hidden">
+      <img src="/images/properties/955/exterior-front.jpg" alt="Station 955 Luxury Apartments" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="absolute inset-0 flex items-end">
+        <div class="max-w-[1280px] mx-auto px-10 pb-10 w-full">
+          <div class="tag bg-white/10 border-white/20 text-white mb-3">Development · Completed</div>
+          <h1 class="text-[clamp(28px,3.5vw,44px)] font-bold text-white tracking-tight">Station 955 – Luxury Apartments</h1>
+          <p class="text-[15px] text-white/80 mt-2">Eau Claire, WI</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="bg-white py-16 border-t border-border">
+      <div class="max-w-[1280px] mx-auto px-10">
+        <div class="col-2 grid grid-cols-2 gap-16 items-start">
+
+          <div>
+            <div class="accent-rule"></div>
+            <h2 class="text-[24px] font-bold text-black mb-4">Property Overview</h2>
+            <p class="text-[14px] text-mid-gray leading-[1.8] mb-6">Station 955 is a ground-up luxury apartment development in Eau Claire, Wisconsin — a flagship project showcasing Blackdeer's development capabilities. The property delivers high-end finishes, resort-style amenities, and a premium living experience in one of Western Wisconsin's fastest-growing markets.</p>
+
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="p-4 bg-off-white border border-border">
+                <div class="text-[10px] tracking-[.14em] uppercase text-mid-gray mb-1">Asset Type</div>
+                <div class="text-[14px] font-semibold text-black">Luxury Multifamily</div>
+              </div>
+              <div class="p-4 bg-off-white border border-border">
+                <div class="text-[10px] tracking-[.14em] uppercase text-mid-gray mb-1">Location</div>
+                <div class="text-[14px] font-semibold text-black">Eau Claire, WI</div>
+              </div>
+              <div class="p-4 bg-off-white border border-border">
+                <div class="text-[10px] tracking-[.14em] uppercase text-mid-gray mb-1">Type</div>
+                <div class="text-[14px] font-semibold text-black">Ground-Up Development</div>
+              </div>
+              <div class="p-4 bg-off-white border border-border">
+                <div class="text-[10px] tracking-[.14em] uppercase text-mid-gray mb-1">Status</div>
+                <div class="text-[14px] font-semibold text-black">Completed · Stabilized</div>
+              </div>
+            </div>
+
+            <h3 class="text-[17px] font-semibold text-black mb-3">Key Features</h3>
+            <ul class="space-y-2 mb-8">
+              <li class="flex items-start gap-2 text-[13px] text-mid-gray leading-[1.7]">
+                <span class="text-accent mt-1">•</span> Premium finishes: quartz countertops, stainless appliances, in-unit laundry
+              </li>
+              <li class="flex items-start gap-2 text-[13px] text-mid-gray leading-[1.7]">
+                <span class="text-accent mt-1">•</span> State-of-the-art fitness center with modern equipment
+              </li>
+              <li class="flex items-start gap-2 text-[13px] text-mid-gray leading-[1.7]">
+                <span class="text-accent mt-1">•</span> Community lounge and social spaces for residents
+              </li>
+              <li class="flex items-start gap-2 text-[13px] text-mid-gray leading-[1.7]">
+                <span class="text-accent mt-1">•</span> Convenient Eau Claire location near dining, entertainment, and employers
+              </li>
+              <li class="flex items-start gap-2 text-[13px] text-mid-gray leading-[1.7]">
+                <span class="text-accent mt-1">•</span> Professional on-site management by Blackdeer
+              </li>
+            </ul>
+
+            <!-- Photo Gallery -->
+            <h3 class="text-[17px] font-semibold text-black mb-3">Gallery</h3>
+            <div class="grid grid-cols-3 gap-2">
+              <img src="/images/properties/955/living-room.jpg" alt="Station 955 living room" class="w-full h-[100px] object-cover" />
+              <img src="/images/properties/955/kitchen.jpg" alt="Station 955 kitchen" class="w-full h-[100px] object-cover" />
+              <img src="/images/properties/955/community-room.jpg" alt="Station 955 community room" class="w-full h-[100px] object-cover" />
+            </div>
+          </div>
+
+          <div>
+            <LeadCaptureForm
+              context="Property Inquiry – Station 955"
+              heading="Interested in Station 955?"
+              subheading="Whether you're looking to lease a unit or invest in similar developments — reach out."
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

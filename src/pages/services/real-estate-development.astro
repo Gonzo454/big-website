@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+---
+
+<Layout title="Real Estate Development – Blackdeer Investment Group">
+  <Nav />
+
+  <main class="pt-[68px]">
+    <!-- Hero Banner -->
+    <section class="bg-black py-20">
+      <div class="max-w-[1280px] mx-auto px-10">
+        <div class="label">Services</div>
+        <h1 class="text-[clamp(32px,4vw,48px)] font-bold text-white tracking-tight leading-tight">Real Estate Development</h1>
+        <p class="text-[15px] text-[#aaa] mt-4 max-w-[640px] leading-[1.8]">From site acquisition through construction completion — we develop commercial and residential projects across Wisconsin's high-growth markets.</p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="bg-white py-20 border-t border-border">
+      <div class="max-w-[1280px] mx-auto px-10">
+        <div class="col-2 grid grid-cols-2 gap-16 items-start">
+
+          <div>
+            <div class="accent-rule"></div>
+            <h2 class="text-[24px] font-bold text-black mb-4">Our Development Process</h2>
+            <p class="text-[14px] text-mid-gray leading-[1.8] mb-6">Blackdeer identifies high-potential sites, navigates entitlements, secures capital, and executes construction — delivering projects that generate returns for investors and value for communities.</p>
+
+            <div class="space-y-5">
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">1</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Site Acquisition & Due Diligence</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Market analysis, land identification, environmental assessment, and financial feasibility modeling for development opportunities.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">2</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Entitlements & Approvals</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Zoning applications, conditional use permits, TIF negotiations, and municipal coordination to secure project approvals.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">3</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Construction Oversight</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">GC selection, budget management, schedule tracking, quality control, and stakeholder communication throughout the build.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">4</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Lease-Up & Stabilization</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Pre-leasing strategies, marketing, tenant buildout coordination, and operational transition into the management phase.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-10 p-6 bg-off-white border border-border">
+              <h3 class="text-[14px] font-semibold text-black mb-2">Completed Projects</h3>
+              <p class="text-[13px] text-mid-gray leading-[1.7]">Station 955 (luxury apartments, Eau Claire), Scooter's Coffee & Taco John's (ground-up retail, multiple locations), and active pipeline of mixed-use and industrial projects in the Madison metro.</p>
+            </div>
+          </div>
+
+          <div>
+            <LeadCaptureForm
+              context="Real Estate Development"
+              heading="Partner With Us"
+              subheading="Have a site or development concept? Let's discuss how we can bring it to life."
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

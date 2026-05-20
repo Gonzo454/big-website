@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+---
+
+<Layout title="Investment Opportunities – Blackdeer Investment Group">
+  <Nav />
+
+  <main class="pt-[68px]">
+    <!-- Hero Banner -->
+    <section class="bg-black py-20">
+      <div class="max-w-[1280px] mx-auto px-10">
+        <div class="label">Investors</div>
+        <h1 class="text-[clamp(32px,4vw,48px)] font-bold text-white tracking-tight leading-tight">Investment Opportunities</h1>
+        <p class="text-[15px] text-[#aaa] mt-4 max-w-[640px] leading-[1.8]">Access curated Midwest real estate investment opportunities — stabilized income, value-add repositioning, and ground-up development plays.</p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="bg-white py-20 border-t border-border">
+      <div class="max-w-[1280px] mx-auto px-10">
+        <div class="col-2 grid grid-cols-2 gap-16 items-start">
+
+          <div>
+            <div class="accent-rule"></div>
+            <h2 class="text-[24px] font-bold text-black mb-4">Why Invest With Blackdeer</h2>
+            <p class="text-[14px] text-mid-gray leading-[1.8] mb-6">We combine operator expertise with investment discipline. Our team manages every asset we invest in — aligning our interests with our investors and eliminating the disconnect between ownership and operations.</p>
+
+            <div class="space-y-5">
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">1</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Stabilized Income</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Cash-flowing commercial and multifamily assets with established tenants and predictable returns. Ideal for passive investors seeking consistent distributions.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">2</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Value-Add Repositioning</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Under-managed or under-improved properties where our operational expertise can drive NOI growth through renovations, re-leasing, and improved management.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">3</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Development Plays</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Ground-up projects in high-growth Wisconsin markets — from luxury multifamily to retail pad developments. Higher risk, higher return potential.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">4</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Operator Alignment</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">We invest alongside our partners and manage every asset ourselves. No third-party management disconnect — your operator is your partner.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-10 p-6 bg-off-white border border-border">
+              <h3 class="text-[14px] font-semibold text-black mb-2">Investment Minimums & Structure</h3>
+              <p class="text-[13px] text-mid-gray leading-[1.7]">Typical minimums range from $50K–$250K depending on the opportunity. Structures include LP interests, preferred equity, and co-GP positions for qualified investors.</p>
+            </div>
+          </div>
+
+          <div>
+            <LeadCaptureForm
+              context="Investment Opportunities"
+              heading="Join Our Investor List"
+              subheading="Share your investment criteria and we'll notify you when matching opportunities arise."
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

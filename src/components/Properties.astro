@@ -6,6 +6,7 @@ const properties = [
     tag: 'Commercial · Managed',
     name: 'Honey Creek Corporate Center',
     location: 'Madison, WI',
+    href: '/properties/honey-creek-corporate-center',
   },
   {
     image: '/images/properties/cottage-grove-retail/aerial-1.png',
@@ -13,6 +14,7 @@ const properties = [
     tag: 'Retail · Managed',
     name: 'Cottage Grove Retail Center',
     location: 'Cottage Grove, WI',
+    href: '/properties/cottage-grove-retail-center',
   },
   {
     image: '/images/properties/cic-ii/exterior-1.png',
@@ -20,6 +22,7 @@ const properties = [
     tag: 'Industrial · Managed',
     name: 'Center for Industry & Commerce II',
     location: 'Madison, WI',
+    href: '/properties/center-for-industry-and-commerce-ii',
   },
   {
     image: '/images/properties/955/exterior-front.jpg',
@@ -27,6 +30,7 @@ const properties = [
     tag: 'Development · Completed',
     name: 'Station 955 – Luxury Apartments',
     location: 'Eau Claire, WI',
+    href: '/properties/station-955',
   },
 ];
 ---
@@ -43,7 +47,7 @@ const properties = [
 
     <div class="col-4 grid grid-cols-4 gap-4">
       {properties.map(property => (
-        <div class="card overflow-hidden">
+        <a href={property.href} class="card overflow-hidden no-underline block">
           <div class="h-[180px] bg-light-gray overflow-hidden">
             <img
               src={property.image}
@@ -56,8 +60,9 @@ const properties = [
             <div class="tag mb-2">{property.tag}</div>
             <div class="text-sm font-semibold text-black leading-tight mt-1.5">{property.name}</div>
             <div class="text-[11px] text-mid-gray mt-1">{property.location}</div>
+            <span class="text-[11px] tracking-[.1em] uppercase text-accent font-semibold mt-2 inline-block">View Details →</span>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   </div>
