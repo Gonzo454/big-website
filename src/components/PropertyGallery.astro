@@ -1,0 +1,83 @@
+---
+interface Props {
+  images: { src: string; alt: string }[];
+  columns?: number;
+}
+
+const { images, columns = 3 } = Astro.props;
+const gridClass = columns === 2 ? 'grid-cols-2' : 'grid-cols-3';
+---
+
+<h3 class="text-[17px] font-semibold text-black mb-3">Gallery</h3>
+<div class={`grid ${gridClass} gap-2`}>
+  {images.map((img, i) => (
+    <button
+      type="button"
+      class="gallery-thumb cursor-pointer border-0 p-0 bg-transparent overflow-hidden"
+      data-index={i}
+      data-src={img.src}
+      data-alt={img.alt}
+    >
+      <img src={img.src} alt={img.alt} class="w-full h-[120px] object-cover block hover:opacity-80 transition-opacity" />
+    </button>
+  ))}
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 z-[200] bg-black/90 hidden items-center justify-center" style="display:none;">
+  <button id="lb-close" type="button" class="absolute top-5 right-6 text-white text-3xl bg-transparent border-0 cursor-pointer z-[201] leading-none">&times;</button>
+  <button id="lb-prev" type="button" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl bg-transparent border-0 cursor-pointer z-[201] leading-none">&#8249;</button>
+  <button id="lb-next" type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl bg-transparent border-0 cursor-pointer z-[201] leading-none">&#8250;</button>
+  <img id="lb-img" src="" alt="" class="max-h-[85vh] max-w-[90vw] object-contain" />
+  <div id="lb-caption" class="absolute bottom-6 left-0 right-0 text-center text-white text-sm"></div>
+</div>
+
+<script>
+  const thumbs = document.querySelectorAll('.gallery-thumb');
+  const lightbox = document.getElementById('lightbox')!;
+  const lbImg = document.getElementById('lb-img') as HTMLImageElement;
+  const lbCaption = document.getElementById('lb-caption')!;
+  const images: { src: string; alt: string }[] = [];
+  let current = 0;
+
+  thumbs.forEach(t => {
+    const el = t as HTMLElement;
+    images.push({ src: el.dataset.src!, alt: el.dataset.alt! });
+    t.addEventListener('click', () => {
+      current = parseInt(el.dataset.index!);
+      show(current);
+    });
+  });
+
+  function show(i: number) {
+    lbImg.src = images[i].src;
+    lbImg.alt = images[i].alt;
+    lbCaption.textContent = images[i].alt;
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lightbox.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('lb-close')!.addEventListener('click', close);
+  document.getElementById('lb-prev')!.addEventListener('click', () => {
+    current = (current - 1 + images.length) % images.length;
+    show(current);
+  });
+  document.getElementById('lb-next')!.addEventListener('click', () => {
+    current = (current + 1) % images.length;
+    show(current);
+  });
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.style.display === 'none') return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') { current = (current - 1 + images.length) % images.length; show(current); }
+    if (e.key === 'ArrowRight') { current = (current + 1) % images.length; show(current); }
+  });
+</script>

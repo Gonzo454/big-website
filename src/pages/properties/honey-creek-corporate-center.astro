@@ -3,6 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+import PropertyGallery from '../../components/PropertyGallery.astro';
+import PropertyMap from '../../components/PropertyMap.astro';
 ---
 
 <Layout title="Honey Creek Corporate Center – Blackdeer Investment Group">
@@ -71,12 +73,15 @@ import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
             </ul>
 
             <!-- Photo Gallery -->
-            <h3 class="text-[17px] font-semibold text-black mb-3">Gallery</h3>
-            <div class="grid grid-cols-3 gap-2">
-              <img src="/images/properties/honey-creek/front-parking.jpg" alt="Honey Creek front" class="w-full h-[100px] object-cover" />
-              <img src="/images/properties/honey-creek/building-sign.jpg" alt="Honey Creek sign" class="w-full h-[100px] object-cover" />
-              <img src="/images/properties/honey-creek/pond-fountain.jpg" alt="Honey Creek pond" class="w-full h-[100px] object-cover" />
-            </div>
+            <PropertyGallery images={[
+              { src: '/images/properties/honey-creek/front-parking.jpg', alt: 'Honey Creek front entrance' },
+              { src: '/images/properties/honey-creek/building-sign.jpg', alt: 'Honey Creek building sign' },
+              { src: '/images/properties/honey-creek/pond-fountain.jpg', alt: 'Honey Creek pond and fountain' },
+              { src: '/images/properties/honey-creek/pond-chairs.jpg', alt: 'Honey Creek pond seating area' },
+            ]} />
+
+            <!-- Map -->
+            <PropertyMap lat={43.0435} lng={-89.4960} label="Honey Creek Corporate Center" />
           </div>
 
           <div>

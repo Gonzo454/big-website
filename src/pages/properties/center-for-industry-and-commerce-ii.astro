@@ -3,6 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+import PropertyGallery from '../../components/PropertyGallery.astro';
+import PropertyMap from '../../components/PropertyMap.astro';
 ---
 
 <Layout title="Center for Industry & Commerce II – Blackdeer Investment Group">
@@ -71,11 +73,13 @@ import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
             </ul>
 
             <!-- Photo Gallery -->
-            <h3 class="text-[17px] font-semibold text-black mb-3">Gallery</h3>
-            <div class="grid grid-cols-2 gap-2">
-              <img src="/images/properties/cic-ii/exterior-1.png" alt="CIC II exterior" class="w-full h-[120px] object-cover" />
-              <img src="/images/properties/cic-ii/exterior-2.png" alt="CIC II alternate view" class="w-full h-[120px] object-cover" />
-            </div>
+            <PropertyGallery images={[
+              { src: '/images/properties/cic-ii/exterior-1.png', alt: 'CIC II exterior view' },
+              { src: '/images/properties/cic-ii/exterior-2.png', alt: 'CIC II alternate exterior view' },
+            ]} columns={2} />
+
+            <!-- Map -->
+            <PropertyMap lat={43.0728} lng={-89.3204} label="Center for Industry & Commerce II" />
           </div>
 
           <div>

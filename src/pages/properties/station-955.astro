@@ -3,6 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+import PropertyGallery from '../../components/PropertyGallery.astro';
+import PropertyMap from '../../components/PropertyMap.astro';
 ---
 
 <Layout title="Station 955 – Luxury Apartments – Blackdeer Investment Group">
@@ -71,12 +73,15 @@ import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
             </ul>
 
             <!-- Photo Gallery -->
-            <h3 class="text-[17px] font-semibold text-black mb-3">Gallery</h3>
-            <div class="grid grid-cols-3 gap-2">
-              <img src="/images/properties/955/living-room.jpg" alt="Station 955 living room" class="w-full h-[100px] object-cover" />
-              <img src="/images/properties/955/kitchen.jpg" alt="Station 955 kitchen" class="w-full h-[100px] object-cover" />
-              <img src="/images/properties/955/community-room.jpg" alt="Station 955 community room" class="w-full h-[100px] object-cover" />
-            </div>
+            <PropertyGallery images={[
+              { src: '/images/properties/955/living-room.jpg', alt: 'Station 955 living room' },
+              { src: '/images/properties/955/kitchen.jpg', alt: 'Station 955 kitchen' },
+              { src: '/images/properties/955/community-room.jpg', alt: 'Station 955 community room' },
+              { src: '/images/properties/955/community-area.jpg', alt: 'Station 955 community area' },
+            ]} />
+
+            <!-- Map -->
+            <PropertyMap lat={44.8113} lng={-91.4985} label="Station 955 – Luxury Apartments" />
           </div>
 
           <div>

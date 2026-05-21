@@ -1,0 +1,26 @@
+---
+interface Props {
+  lat: number;
+  lng: number;
+  label: string;
+}
+
+const { lat, lng, label } = Astro.props;
+const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${lng - 0.008}%2C${lat - 0.005}%2C${lng + 0.008}%2C${lat + 0.005}&layer=mapnik&marker=${lat}%2C${lng}`;
+const linkUrl = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=16/${lat}/${lng}`;
+---
+
+<div class="mt-8">
+  <h3 class="text-[17px] font-semibold text-black mb-3">Location</h3>
+  <div class="border border-border overflow-hidden">
+    <iframe
+      src={mapUrl}
+      width="100%"
+      height="280"
+      style="border:0;"
+      loading="lazy"
+      title={`Map – ${label}`}
+    ></iframe>
+  </div>
+  <a href={linkUrl} target="_blank" rel="noopener noreferrer" class="text-[11px] tracking-[.1em] uppercase text-accent no-underline font-semibold mt-2 inline-block">View Larger Map →</a>
+</div>
