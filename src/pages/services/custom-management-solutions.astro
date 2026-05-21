@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+---
+
+<Layout title="Custom Management Solutions – Blackdeer Investment Group">
+  <Nav />
+
+  <main class="pt-[68px]">
+    <!-- Hero Banner -->
+    <section class="bg-black py-20">
+      <div class="max-w-[1280px] mx-auto px-10">
+        <div class="label">Services</div>
+        <h1 class="text-[clamp(32px,4vw,48px)] font-bold text-white tracking-tight leading-tight">Custom Management Solutions</h1>
+        <p class="text-[15px] text-[#aaa] mt-4 max-w-[640px] leading-[1.8]">Not every property needs full-service management. Pick the services you need — accounting, leasing, maintenance, or any combination — and pay only for what you use.</p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="bg-white py-20 border-t border-border">
+      <div class="max-w-[1280px] mx-auto px-10">
+        <div class="col-2 grid grid-cols-2 gap-16 items-start">
+
+          <div>
+            <div class="accent-rule"></div>
+            <h2 class="text-[24px] font-bold text-black mb-4">Unbundled Services</h2>
+            <p class="text-[14px] text-mid-gray leading-[1.8] mb-6">Our custom model lets you assemble exactly the management support you need. Ideal for self-managing owners who need specific expertise, bank-owned assets requiring receivership, or portfolios transitioning between managers.</p>
+
+            <div class="space-y-5">
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">1</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Accounting & Financial Reporting</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Monthly statements, accounts payable/receivable, CAM reconciliation, annual budgets, and audit preparation — without requiring full management.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">2</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Leasing Only</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Marketing, prospect screening, tours, lease negotiation, and execution — we fill your vacancies while you handle day-to-day operations.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">3</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Maintenance Coordination</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Vendor management, work order systems, preventive maintenance schedules, emergency response, and capital project oversight as a standalone service.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">4</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Bank Receivership</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Court-appointed asset management for distressed properties. Stabilization, compliance, reporting to the court, and disposition preparation.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-10 p-6 bg-off-white border border-border">
+              <h3 class="text-[14px] font-semibold text-black mb-2">How It Works</h3>
+              <p class="text-[13px] text-mid-gray leading-[1.7]">Select the services you need from our menu, tell us about your property, and we'll build a custom scope and fee proposal. No long-term contracts required — month-to-month available for most services.</p>
+            </div>
+          </div>
+
+          <div>
+            <LeadCaptureForm
+              context="Custom Management Solutions"
+              heading="Build Your Custom Plan"
+              subheading="Tell us which services you need and we'll put together a tailored proposal."
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

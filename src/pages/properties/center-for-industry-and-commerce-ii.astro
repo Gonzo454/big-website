@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+import PropertyGallery from '../../components/PropertyGallery.astro';
+import PropertyMap from '../../components/PropertyMap.astro';
+---
+
+<Layout title="Center for Industry & Commerce II – Blackdeer Investment Group">
+  <Nav />
+
+  <main class="pt-[68px]">
+    <!-- Hero Image -->
+    <section class="relative h-[360px] overflow-hidden">
+      <img src="/images/properties/cic-ii/exterior-1.png" alt="Center for Industry and Commerce II" class="w-full h-full object-cover" />
+      <!-- no overlay — badges provide text contrast -->
+      <div class="absolute inset-0 flex items-end">
+        <div class="max-w-[1280px] mx-auto px-10 pb-10 w-full">
+          <div class="flex flex-col items-start gap-2">
+            <span class="bg-black/80 text-white text-[11px] tracking-[.14em] uppercase font-semibold px-3 py-1.5 inline-block">Industrial · Managed</span>
+            <span class="bg-black/80 text-white text-[clamp(28px,3.5vw,44px)] font-bold tracking-tight px-4 py-2 inline-block leading-tight">Center for Industry & Commerce II</span>
+            <span class="bg-black/80 text-white text-[15px] px-3 py-1.5 inline-block">Madison, WI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="bg-white py-16 border-t border-border">
+      <div class="max-w-[1280px] mx-auto px-10">
+        <div class="col-2 grid grid-cols-2 gap-16 items-start">
+
+          <div>
+            <div class="accent-rule"></div>
+            <h2 class="text-[24px] font-bold text-black mb-4">Property Overview</h2>
+            <p class="text-[14px] text-mid-gray leading-[1.8] mb-6">Center for Industry & Commerce II (CIC II) is a modern industrial/flex facility located in Madison, Wisconsin. The property caters to manufacturing, distribution, and service businesses requiring functional industrial space with convenient access to major transportation corridors.</p>
+
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="p-4 bg-off-white border border-border">
+                <div class="text-[10px] tracking-[.14em] uppercase text-mid-gray mb-1">Asset Type</div>
+                <div class="text-[14px] font-semibold text-black">Industrial / Flex</div>
+              </div>
+              <div class="p-4 bg-off-white border border-border">
+                <div class="text-[10px] tracking-[.14em] uppercase text-mid-gray mb-1">Location</div>
+                <div class="text-[14px] font-semibold text-black">Madison, WI</div>
+              </div>
+              <div class="p-4 bg-off-white border border-border">
+                <div class="text-[10px] tracking-[.14em] uppercase text-mid-gray mb-1">Management</div>
+                <div class="text-[14px] font-semibold text-black">Blackdeer Investment Group</div>
+              </div>
+              <div class="p-4 bg-off-white border border-border">
+                <div class="text-[10px] tracking-[.14em] uppercase text-mid-gray mb-1">Status</div>
+                <div class="text-[14px] font-semibold text-black">Active · Leasing</div>
+              </div>
+            </div>
+
+            <h3 class="text-[17px] font-semibold text-black mb-3">Key Features</h3>
+            <ul class="space-y-2 mb-8">
+              <li class="flex items-start gap-2 text-[13px] text-mid-gray leading-[1.7]">
+                <span class="text-accent mt-1">•</span> Modern industrial/flex space with clear heights and dock access
+              </li>
+              <li class="flex items-start gap-2 text-[13px] text-mid-gray leading-[1.7]">
+                <span class="text-accent mt-1">•</span> Divisible suites accommodating a range of tenant sizes
+              </li>
+              <li class="flex items-start gap-2 text-[13px] text-mid-gray leading-[1.7]">
+                <span class="text-accent mt-1">•</span> Strategic location with access to major highways and distribution routes
+              </li>
+              <li class="flex items-start gap-2 text-[13px] text-mid-gray leading-[1.7]">
+                <span class="text-accent mt-1">•</span> Suitable for manufacturing, distribution, assembly, and service operations
+              </li>
+              <li class="flex items-start gap-2 text-[13px] text-mid-gray leading-[1.7]">
+                <span class="text-accent mt-1">•</span> On-site management and maintenance support
+              </li>
+            </ul>
+
+            <!-- Photo Gallery -->
+            <PropertyGallery images={[
+              { src: '/images/properties/cic-ii/exterior-1.png', alt: 'CIC II exterior view' },
+              { src: '/images/properties/cic-ii/exterior-2.png', alt: 'CIC II alternate exterior view' },
+            ]} columns={2} />
+
+            <!-- Map -->
+            <PropertyMap address="Center for Industry and Commerce, Madison, WI" label="Center for Industry & Commerce II" />
+          </div>
+
+          <div>
+            <LeadCaptureForm
+              context="Property Inquiry – Center for Industry & Commerce II"
+              heading="Inquire About This Property"
+              subheading="Looking for industrial or flex space in Madison? Get in touch."
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

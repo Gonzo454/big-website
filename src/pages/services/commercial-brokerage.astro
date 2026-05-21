@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+---
+
+<Layout title="Commercial Brokerage – Blackdeer Investment Group">
+  <Nav />
+
+  <main class="pt-[68px]">
+    <!-- Hero Banner -->
+    <section class="bg-black py-20">
+      <div class="max-w-[1280px] mx-auto px-10">
+        <div class="label">Services</div>
+        <h1 class="text-[clamp(32px,4vw,48px)] font-bold text-white tracking-tight leading-tight">Commercial Brokerage</h1>
+        <p class="text-[15px] text-[#aaa] mt-4 max-w-[640px] leading-[1.8]">Acquisitions, dispositions, leasing, and advisory services for commercial real estate throughout Wisconsin and the Midwest.</p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="bg-white py-20 border-t border-border">
+      <div class="max-w-[1280px] mx-auto px-10">
+        <div class="col-2 grid grid-cols-2 gap-16 items-start">
+
+          <div>
+            <div class="accent-rule"></div>
+            <h2 class="text-[24px] font-bold text-black mb-4">Brokerage Services</h2>
+            <p class="text-[14px] text-mid-gray leading-[1.8] mb-6">Our brokerage team combines deep market knowledge with a principal's mindset. We represent buyers, sellers, landlords, and tenants across all commercial asset classes.</p>
+
+            <div class="space-y-5">
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">1</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Acquisitions</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Sourcing off-market opportunities, financial underwriting, offer negotiation, due diligence coordination, and closing management for buyers.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">2</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Dispositions</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Property valuation, marketing packages, buyer identification, negotiation, and transaction management to maximize sale proceeds.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">3</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Leasing Representation</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Landlord and tenant representation for office, retail, and industrial spaces. Market surveys, tours, lease negotiation, and deal structuring.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">4</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Advisory & Consulting</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Market analysis, highest-and-best-use studies, portfolio strategy, and expert guidance for complex real estate decisions.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-10 p-6 bg-off-white border border-border">
+              <h3 class="text-[14px] font-semibold text-black mb-2">Notable Transactions</h3>
+              <p class="text-[13px] text-mid-gray leading-[1.7]">Amazon Distribution Center land sale (Sun Prairie), Honey Creek Corporate Center acquisition, multiple retail pad site sales across Dane County, and ongoing tenant rep engagements for regional businesses.</p>
+            </div>
+          </div>
+
+          <div>
+            <LeadCaptureForm
+              context="Commercial Brokerage"
+              heading="Discuss a Transaction"
+              subheading="Whether buying, selling, or leasing — tell us about your real estate needs."
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

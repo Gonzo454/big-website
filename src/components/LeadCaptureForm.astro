@@ -1,0 +1,70 @@
+---
+interface Props {
+  context: string;
+  heading?: string;
+  subheading?: string;
+}
+
+const { context, heading = 'Get in Touch', subheading = 'Tell us about your needs and a team member will reach out within one business day.' } = Astro.props;
+---
+
+<div class="bg-black p-9">
+  <h3 class="text-[22px] font-bold text-white mb-1.5">{heading}</h3>
+  <p class="text-[13px] text-[#aaa] mb-7">{subheading}</p>
+
+  <form class="lead-capture-form" data-context={context}>
+    <div class="flex flex-col gap-3.5">
+      <div>
+        <div class="text-[10px] tracking-[.14em] uppercase text-[#999] mb-1.5">Your Name</div>
+        <input type="text" name="name" placeholder="Jane Smith" required class="form-input !bg-[#111] !border-[#333] !text-white" />
+      </div>
+      <div>
+        <div class="text-[10px] tracking-[.14em] uppercase text-[#999] mb-1.5">Email Address</div>
+        <input type="email" name="email" placeholder="jane@company.com" required class="form-input !bg-[#111] !border-[#333] !text-white" />
+      </div>
+      <div>
+        <div class="text-[10px] tracking-[.14em] uppercase text-[#999] mb-1.5">Phone</div>
+        <input type="tel" name="phone" placeholder="(608) 000-0000" class="form-input !bg-[#111] !border-[#333] !text-white" />
+      </div>
+      <div>
+        <div class="text-[10px] tracking-[.14em] uppercase text-[#999] mb-1.5">Property Type</div>
+        <select name="property_type" class="form-input !bg-[#111] !border-[#333] !text-white">
+          <option value="">Select type…</option>
+          <option>Commercial Office</option>
+          <option>Retail</option>
+          <option>Industrial</option>
+          <option>Multifamily / Residential</option>
+          <option>Senior Housing</option>
+          <option>Mixed Use</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <div class="text-[10px] tracking-[.14em] uppercase text-[#999] mb-1.5">Tell Us More</div>
+        <textarea name="message" rows="3" placeholder="Location, size, current situation, goals…" class="form-input !bg-[#111] !border-[#333] !text-white resize-y"></textarea>
+      </div>
+      <button type="submit" class="btn-accent w-full py-3.5 text-center">Send Request →</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  document.querySelectorAll('.lead-capture-form').forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const f = e.target as HTMLFormElement;
+      const data = new FormData(f);
+      const payload = {
+        name: data.get('name'),
+        email: data.get('email'),
+        phone: data.get('phone'),
+        property_type: data.get('property_type'),
+        message: data.get('message'),
+        context: f.dataset.context,
+      };
+      console.log('Lead capture payload:', payload);
+      alert('Thank you! Your inquiry has been received. A Blackdeer team member will contact you within one business day.');
+      f.reset();
+    });
+  });
+</script>

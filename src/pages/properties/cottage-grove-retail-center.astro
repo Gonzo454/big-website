@@ -1,0 +1,102 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+import PropertyGallery from '../../components/PropertyGallery.astro';
+import PropertyMap from '../../components/PropertyMap.astro';
+---
+
+<Layout title="Cottage Grove Retail Center – Blackdeer Investment Group">
+  <Nav />
+
+  <main class="pt-[68px]">
+    <!-- Hero Image -->
+    <section class="relative h-[360px] overflow-hidden">
+      <img src="/images/properties/cottage-grove-retail/aerial-1.png" alt="Cottage Grove Retail Center" class="w-full h-full object-cover" />
+      <!-- no overlay — badges provide text contrast -->
+      <div class="absolute inset-0 flex items-end">
+        <div class="max-w-[1280px] mx-auto px-10 pb-10 w-full">
+          <div class="flex flex-col items-start gap-2">
+            <span class="bg-black/80 text-white text-[11px] tracking-[.14em] uppercase font-semibold px-3 py-1.5 inline-block">Retail · Managed</span>
+            <span class="bg-black/80 text-white text-[clamp(28px,3.5vw,44px)] font-bold tracking-tight px-4 py-2 inline-block leading-tight">Cottage Grove Retail Center</span>
+            <span class="bg-black/80 text-white text-[15px] px-3 py-1.5 inline-block">Cottage Grove, WI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="bg-white py-16 border-t border-border">
+      <div class="max-w-[1280px] mx-auto px-10">
+        <div class="col-2 grid grid-cols-2 gap-16 items-start">
+
+          <div>
+            <div class="accent-rule"></div>
+            <h2 class="text-[24px] font-bold text-black mb-4">Property Overview</h2>
+            <p class="text-[14px] text-mid-gray leading-[1.8] mb-6">Cottage Grove Retail Center is a neighborhood retail property serving one of Dane County's fastest-growing communities. Positioned along a primary commercial corridor, the center benefits from strong traffic counts and a growing residential base that fuels consistent tenant demand.</p>
+
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="p-4 bg-off-white border border-border">
+                <div class="text-[10px] tracking-[.14em] uppercase text-mid-gray mb-1">Asset Type</div>
+                <div class="text-[14px] font-semibold text-black">Retail Strip Center</div>
+              </div>
+              <div class="p-4 bg-off-white border border-border">
+                <div class="text-[10px] tracking-[.14em] uppercase text-mid-gray mb-1">Location</div>
+                <div class="text-[14px] font-semibold text-black">Cottage Grove, WI</div>
+              </div>
+              <div class="p-4 bg-off-white border border-border">
+                <div class="text-[10px] tracking-[.14em] uppercase text-mid-gray mb-1">Management</div>
+                <div class="text-[14px] font-semibold text-black">Blackdeer Investment Group</div>
+              </div>
+              <div class="p-4 bg-off-white border border-border">
+                <div class="text-[10px] tracking-[.14em] uppercase text-mid-gray mb-1">Status</div>
+                <div class="text-[14px] font-semibold text-black">Active · Leasing</div>
+              </div>
+            </div>
+
+            <h3 class="text-[17px] font-semibold text-black mb-3">Key Features</h3>
+            <ul class="space-y-2 mb-8">
+              <li class="flex items-start gap-2 text-[13px] text-mid-gray leading-[1.7]">
+                <span class="text-accent mt-1">•</span> High-visibility location on primary commercial corridor
+              </li>
+              <li class="flex items-start gap-2 text-[13px] text-mid-gray leading-[1.7]">
+                <span class="text-accent mt-1">•</span> Growing Cottage Grove market with strong residential development
+              </li>
+              <li class="flex items-start gap-2 text-[13px] text-mid-gray leading-[1.7]">
+                <span class="text-accent mt-1">•</span> Multi-tenant retail format with diverse tenant mix
+              </li>
+              <li class="flex items-start gap-2 text-[13px] text-mid-gray leading-[1.7]">
+                <span class="text-accent mt-1">•</span> Ample parking and excellent road frontage
+              </li>
+              <li class="flex items-start gap-2 text-[13px] text-mid-gray leading-[1.7]">
+                <span class="text-accent mt-1">•</span> Easy access to I-94 corridor and Madison metro area
+              </li>
+            </ul>
+
+            <!-- Photo Gallery -->
+            <PropertyGallery images={[
+              { src: '/images/properties/cottage-grove-retail/aerial-2.png', alt: 'Cottage Grove Retail Center aerial view' },
+              { src: '/images/properties/cottage-grove-retail/aerial-3.png', alt: 'Cottage Grove Retail Center overview' },
+              { src: '/images/properties/cottage-grove-retail/street-view.png', alt: 'Cottage Grove Retail Center street view' },
+            ]} />
+
+            <!-- Map -->
+            <PropertyMap address="Cottage Grove Retail Center, Cottage Grove, WI" label="Cottage Grove Retail Center" />
+          </div>
+
+          <div>
+            <LeadCaptureForm
+              context="Property Inquiry – Cottage Grove Retail Center"
+              heading="Inquire About This Property"
+              subheading="Interested in leasing retail space or learning about investment? Let us know."
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

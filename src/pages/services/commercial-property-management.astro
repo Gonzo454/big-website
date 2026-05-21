@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+---
+
+<Layout title="Commercial Property Management – Blackdeer Investment Group">
+  <Nav />
+
+  <main class="pt-[68px]">
+    <!-- Hero Banner -->
+    <section class="bg-black py-20">
+      <div class="max-w-[1280px] mx-auto px-10">
+        <div class="label">Services</div>
+        <h1 class="text-[clamp(32px,4vw,48px)] font-bold text-white tracking-tight leading-tight">Commercial Property Management</h1>
+        <p class="text-[15px] text-[#aaa] mt-4 max-w-[640px] leading-[1.8]">Full-service management of office, retail, and industrial properties across Wisconsin — from lease-up to long-term asset optimization.</p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="bg-white py-20 border-t border-border">
+      <div class="max-w-[1280px] mx-auto px-10">
+        <div class="col-2 grid grid-cols-2 gap-16 items-start">
+
+          <div>
+            <div class="accent-rule"></div>
+            <h2 class="text-[24px] font-bold text-black mb-4">What We Deliver</h2>
+            <p class="text-[14px] text-mid-gray leading-[1.8] mb-6">Our commercial property management division handles every aspect of your asset so you can focus on portfolio growth. We combine institutional-quality reporting with hands-on local knowledge.</p>
+
+            <div class="space-y-5">
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">1</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Leasing & Tenant Relations</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Market positioning, prospect tours, lease negotiation, renewals, and day-to-day tenant communication. We keep occupancy high and relationships strong.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">2</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Financial Reporting & Budgeting</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Monthly owner statements, annual budgets, CAM reconciliations, and variance analysis. Full transparency into property financials.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">3</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Maintenance & Capital Oversight</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Preventive maintenance programs, vendor procurement, capital improvement planning, and emergency response coordination.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-accent font-bold text-sm">4</span>
+                </div>
+                <div>
+                  <h3 class="text-[15px] font-semibold text-black mb-1">Asset Strategy & Optimization</h3>
+                  <p class="text-[13px] text-mid-gray leading-[1.7]">Rent surveys, market analysis, capital improvement ROI assessment, and long-term hold/sell recommendations to maximize NOI.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-10 p-6 bg-off-white border border-border">
+              <h3 class="text-[14px] font-semibold text-black mb-2">Properties We Manage</h3>
+              <p class="text-[13px] text-mid-gray leading-[1.7]">Honey Creek Corporate Center (Milwaukee), Center for Industry & Commerce II (Madison), Cottage Grove Retail Center, and additional third-party assets across Wisconsin.</p>
+            </div>
+          </div>
+
+          <div>
+            <LeadCaptureForm
+              context="Commercial Property Management"
+              heading="Request a Management Proposal"
+              subheading="Share your property details and we'll prepare a customized management plan."
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

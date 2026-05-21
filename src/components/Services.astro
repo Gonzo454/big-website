@@ -5,30 +5,35 @@ const services = [
     title: 'Commercial Property Management',
     desc: 'Leasing, tenant relations, financial reporting, maintenance coordination, and capital oversight for office, retail, and industrial assets.',
     tags: ['Leasing', 'Financial Reporting', 'Capital Oversight', 'Tenant Mgmt'],
+    href: '/services/commercial-property-management',
   },
   {
     num: '02',
     title: 'Residential Property Management',
     desc: 'Full-service residential operations: rent collection, resident communications, monthly reporting, and vendor management.',
     tags: ['Rent Collection', 'Resident Relations', 'Reporting', 'Value-Add'],
+    href: '/services/residential-property-management',
   },
   {
     num: '03',
     title: 'Real Estate Development',
     desc: 'Site acquisition, entitlements, redevelopment planning, and construction oversight. Track record includes Station 955 and Scooters/Taco John\'s.',
     tags: ['Station 955', 'Acquisitions', 'Entitlements'],
+    href: '/services/real-estate-development',
   },
   {
     num: '04',
     title: 'Commercial Brokerage',
     desc: 'Acquisitions, dispositions, leasing, and advisory services. Notable transactions include the Amazon Distribution Center land sale.',
     tags: ['Acquisitions', 'Dispositions', 'Amazon Land Sale'],
+    href: '/services/commercial-brokerage',
   },
   {
     num: '05',
     title: 'Custom Management Solutions',
     desc: 'Flexible, unbundled services. Accounting only, leasing only, maintenance, or any combination. Build the plan that fits your property.',
     tags: ['Accounting', 'Leasing Only', 'Maintenance', 'Bank Receivership'],
+    href: '/services/custom-management-solutions',
   },
 ];
 ---
@@ -43,23 +48,24 @@ const services = [
 
     <div class="col-3 grid grid-cols-3 gap-px bg-border">
       {services.map(service => (
-        <div class="card p-8 bg-white">
+        <a href={service.href} class="card p-8 bg-white no-underline block">
           <div class="text-[10px] font-semibold tracking-[.16em] uppercase text-accent mb-4">{service.num}</div>
           <h3 class="text-[17px] font-semibold text-black mb-2.5">{service.title}</h3>
           <p class="text-[13px] text-mid-gray leading-[1.75] mb-4">{service.desc}</p>
-          <div class="flex flex-wrap gap-1.5">
+          <div class="flex flex-wrap gap-1.5 mb-4">
             {service.tags.map(tag => <span class="tag">{tag}</span>)}
           </div>
-        </div>
+          <span class="text-xs tracking-[.1em] uppercase text-accent font-semibold">Learn More →</span>
+        </a>
       ))}
 
       <!-- Investment — accent card -->
-      <div class="p-8 bg-black border-none">
+      <a href="/services/investment-opportunities" class="p-8 bg-black border-none no-underline block">
         <div class="text-[10px] font-semibold tracking-[.16em] uppercase text-accent mb-4">06</div>
         <h3 class="text-[17px] font-semibold text-white mb-2.5">Investment Opportunities</h3>
         <p class="text-[13px] text-[#999] leading-[1.75] mb-6">Access curated Midwest real estate investment opportunities — stabilized income, value-add, and development plays.</p>
-        <a href="#investors" class="text-xs tracking-[.1em] uppercase text-accent no-underline font-semibold">View Investor Portal →</a>
-      </div>
+        <span class="text-xs tracking-[.1em] uppercase text-accent font-semibold">View Investor Portal →</span>
+      </a>
     </div>
   </div>
 </section>

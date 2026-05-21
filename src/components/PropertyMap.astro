@@ -1,0 +1,28 @@
+---
+interface Props {
+  address: string;
+  label: string;
+}
+
+const { address, label } = Astro.props;
+const query = encodeURIComponent(address);
+const mapUrl = `https://maps.google.com/maps?q=${query}&t=m&z=15&output=embed&iwloc=near`;
+const linkUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
+---
+
+<div class="mt-8">
+  <h3 class="text-[17px] font-semibold text-black mb-3">Location</h3>
+  <div class="border border-border overflow-hidden">
+    <iframe
+      src={mapUrl}
+      width="100%"
+      height="280"
+      style="border:0;"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      title={`Map – ${label}`}
+    ></iframe>
+  </div>
+  <a href={linkUrl} target="_blank" rel="noopener noreferrer" class="text-[11px] tracking-[.1em] uppercase text-accent no-underline font-semibold mt-2 inline-block">View on Google Maps →</a>
+</div>
