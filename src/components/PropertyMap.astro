@@ -1,13 +1,13 @@
 ---
 interface Props {
-  lat: number;
-  lng: number;
+  address: string;
   label: string;
 }
 
-const { lat, lng, label } = Astro.props;
-const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${lng - 0.008}%2C${lat - 0.005}%2C${lng + 0.008}%2C${lat + 0.005}&layer=mapnik&marker=${lat}%2C${lng}`;
-const linkUrl = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=16/${lat}/${lng}`;
+const { address, label } = Astro.props;
+const query = encodeURIComponent(address);
+const mapUrl = `https://maps.google.com/maps?q=${query}&t=m&z=15&output=embed&iwloc=near`;
+const linkUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
 ---
 
 <div class="mt-8">
@@ -19,8 +19,10 @@ const linkUrl = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=16/$
       height="280"
       style="border:0;"
       loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
       title={`Map – ${label}`}
     ></iframe>
   </div>
-  <a href={linkUrl} target="_blank" rel="noopener noreferrer" class="text-[11px] tracking-[.1em] uppercase text-accent no-underline font-semibold mt-2 inline-block">View Larger Map →</a>
+  <a href={linkUrl} target="_blank" rel="noopener noreferrer" class="text-[11px] tracking-[.1em] uppercase text-accent no-underline font-semibold mt-2 inline-block">View on Google Maps →</a>
 </div>
