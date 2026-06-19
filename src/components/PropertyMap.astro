@@ -2,11 +2,12 @@
 interface Props {
   address: string;
   label: string;
+  embedUrl?: string;
 }
 
-const { address, label } = Astro.props;
+const { address, label, embedUrl } = Astro.props;
 const query = encodeURIComponent(address);
-const mapUrl = `https://maps.google.com/maps?q=${query}&t=m&z=15&output=embed&iwloc=near`;
+const mapUrl = embedUrl ?? `https://maps.google.com/maps?q=${query}&t=m&z=15&output=embed&iwloc=near`;
 const linkUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
 ---
 
