@@ -81,9 +81,14 @@ const services = [
 
 <script>
   const form = document.getElementById('proposal-form') as HTMLFormElement | null;
-  form?.addEventListener('submit', (e) => {
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const data = new FormData(form);
+    const btn = form!.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    const data = new FormData(form!);
     const services = data.getAll('services');
     const payload = {
       name: data.get('name'),
@@ -91,10 +96,28 @@ const services = [
       phone: data.get('phone'),
       property_type: data.get('property_type'),
       message: data.get('message'),
-      services,
+      context: services.length ? `Services: ${services.join(', ')}` : '',
     };
-    // TODO: Connect to a form backend (e.g. Formspree, Netlify Forms, or custom API)
-    console.log('Form submission payload:', payload);
-    alert('Thank you! Form submission is captured but not yet connected to a backend. A Blackdeer team member will contact you once the form service is configured.');
+
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        alert('Thank you! Your inquiry has been received. A Blackdeer team member will contact you within one business day.');
+        form!.reset();
+      } else {
+        const { error } = await res.json();
+        alert(error || 'Something went wrong. Please try again or call us at (877) 271-4707.');
+      }
+    } catch {
+      alert('Network error. Please try again or call us at (877) 271-4707.');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = originalText;
+    }
   });
 </script>
