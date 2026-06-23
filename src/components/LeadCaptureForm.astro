@@ -50,9 +50,14 @@ const { context, heading = 'Get in Touch', subheading = 'Tell us about your need
 
 <script>
   document.querySelectorAll('.lead-capture-form').forEach(form => {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const f = e.target as HTMLFormElement;
+      const btn = f.querySelector('button[type="submit"]') as HTMLButtonElement;
+      const originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
       const data = new FormData(f);
       const payload = {
         name: data.get('name'),
@@ -62,9 +67,27 @@ const { context, heading = 'Get in Touch', subheading = 'Tell us about your need
         message: data.get('message'),
         context: f.dataset.context,
       };
-      console.log('Lead capture payload:', payload);
-      alert('Thank you! Your inquiry has been received. A Blackdeer team member will contact you within one business day.');
-      f.reset();
+
+      try {
+        const res = await fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (res.ok) {
+          alert('Thank you! Your inquiry has been received. A Blackdeer team member will contact you within one business day.');
+          f.reset();
+        } else {
+          const { error } = await res.json();
+          alert(error || 'Something went wrong. Please try again or call us at (877) 271-4707.');
+        }
+      } catch {
+        alert('Network error. Please try again or call us at (877) 271-4707.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = originalText;
+      }
     });
   });
 </script>
