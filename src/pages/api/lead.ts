@@ -8,6 +8,13 @@ const RECIPIENTS = [
   'sienna@blackdeerig.com',
 ];
 
+const BCC = [
+  'ted@blackdeerig.com',
+  'joe@blackdeerig.com',
+  'chad@blackdeerig.com',
+  'mike@blackdeerig.com',
+];
+
 export const POST: APIRoute = async ({ request }) => {
   const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
@@ -42,6 +49,7 @@ export const POST: APIRoute = async ({ request }) => {
     const { error } = await resend.emails.send({
       from: 'Blackdeer IG Website <noreply@blackdeerig.com>',
       to: RECIPIENTS,
+      bcc: BCC,
       replyTo: email,
       subject,
       html,
