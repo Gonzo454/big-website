@@ -8,7 +8,13 @@ const RECIPIENTS = [
   'sienna@blackdeerig.com',
 ];
 
+const CC = [
+  'chad@blackdeerig.com',
+];
+
 const BCC = [
+  'ted@blackdeerig.com',
+  'joe@blackdeerig.com',
   'mike@blackdeerig.com',
 ];
 
@@ -46,6 +52,7 @@ export const POST: APIRoute = async ({ request }) => {
     const { error } = await resend.emails.send({
       from: 'Blackdeer IG Website <noreply@blackdeerig.com>',
       to: RECIPIENTS,
+      cc: CC,
       bcc: BCC,
       replyTo: email,
       subject,
