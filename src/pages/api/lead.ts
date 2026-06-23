@@ -9,9 +9,6 @@ const RECIPIENTS = [
 ];
 
 const BCC = [
-  'ted@blackdeerig.com',
-  'joe@blackdeerig.com',
-  'chad@blackdeerig.com',
   'mike@blackdeerig.com',
 ];
 
