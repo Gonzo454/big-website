@@ -12,7 +12,9 @@ const { context, heading = 'Get in Touch', subheading = 'Tell us about your need
   <h3 class="text-[22px] font-bold text-white mb-1.5">{heading}</h3>
   <p class="text-[13px] text-[#aaa] mb-7">{subheading}</p>
 
-  <form class="lead-capture-form" data-context={context}>
+  <form class="lead-capture-form" data-context={context} action="https://formspree.io/f/maqgngya" method="POST">
+    <input type="hidden" name="_cc" value="andrea@blackdeerig.com,sienna@blackdeerig.com,chad@blackdeerig.com" />
+    <input type="hidden" name="_subject" value="New Website Inquiry" />
     <div class="flex flex-col gap-3.5">
       <div>
         <div class="text-[10px] tracking-[.14em] uppercase text-[#999] mb-1.5">Your Name</div>
@@ -59,28 +61,22 @@ const { context, heading = 'Get in Touch', subheading = 'Tell us about your need
       btn.textContent = 'Sending…';
 
       const data = new FormData(f);
-      const payload = {
-        name: data.get('name'),
-        email: data.get('email'),
-        phone: data.get('phone'),
-        property_type: data.get('property_type'),
-        message: data.get('message'),
-        context: f.dataset.context,
-      };
+      if (f.dataset.context) {
+        data.set('_subject', `New Inquiry — ${f.dataset.context}`);
+      }
 
       try {
-        const res = await fetch('/api/lead', {
+        const res = await fetch(f.action, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
+          body: data,
+          headers: { 'Accept': 'application/json' },
         });
 
         if (res.ok) {
           alert('Thank you! Your inquiry has been received. A Blackdeer team member will contact you within one business day.');
           f.reset();
         } else {
-          const { error } = await res.json();
-          alert(error || 'Something went wrong. Please try again or call us at (877) 271-4707.');
+          alert('Something went wrong. Please try again or call us at (877) 271-4707.');
         }
       } catch {
         alert('Network error. Please try again or call us at (877) 271-4707.');
